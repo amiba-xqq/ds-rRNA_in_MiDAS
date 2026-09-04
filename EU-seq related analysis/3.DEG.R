@@ -122,23 +122,3 @@ DEG_DEseq2 <- na.omit(tempDEG)
 DEG_DEseq2$geneid <- rownames(DEG_DEseq2)
 DEG_Asy_DMSOvsnoEU <- DEG_DEseq2
 save(DEG_Asy_DMSOvsnoEU,file = "DEG_Asy_DMSOvsnoEU.Rdata")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
