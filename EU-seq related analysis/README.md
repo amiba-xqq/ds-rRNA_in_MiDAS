@@ -19,3 +19,9 @@
 `counts_RNAseq.txt`: EU-seq上游分析得到的表达矩阵，用于`2.counts.R`。
 
 `g2s_vm25_gencode.txt`: ENSEMBLE ID和SYMBOL的转化文件，用于`2.counts.R`。
+
+`tracks.ini.table`: `1.pepline_EUseq.sh`中用于hicPlotTADs作图的track参数文件。
+
+===========================================================================================
+
+
