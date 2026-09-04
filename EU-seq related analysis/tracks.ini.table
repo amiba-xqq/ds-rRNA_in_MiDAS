@@ -1,0 +1,107 @@
+[bigwig]
+file = /mnt/LJW/EUseq202503/bw_strand/Asyn_DMSO_r1sorted.fwd.bw
+title = Asyn.plus.rep1
+color = #00B9E3
+min_value = 0
+max_value = 23000
+height = 1.5
+file_type = bigwig
+
+
+[bigwig]
+file = /mnt/LJW/EUseq202503/bw_strand/Asyn_DMSO_r1sorted.rev.bw
+title = Asyn.minus.rep1
+color = #D96002
+min_value = 0
+max_value = 6800
+height = 1.5
+file_type = bigwig
+orientation = inverted
+
+[spacer]
+
+[bigwig]
+file = /mnt/LJW/EUseq202503/bw_strand/Asyn_DMSO_r2sorted.fwd.bw
+title = Asyn.plus.rep2
+color = #00B9E3
+min_value = 0
+max_value = 23000
+height = 1.5
+file_type = bigwig
+
+
+[bigwig]
+file = /mnt/LJW/EUseq202503/bw_strand/Asyn_DMSO_r2sorted.rev.bw
+title = Asyn.minus.rep2
+color = #D96002
+min_value = 0
+max_value = 6800
+height = 1.5
+file_type = bigwig
+orientation = inverted
+
+[spacer]
+
+[bigwig]
+file = /mnt/LJW/EUseq202503/bw_strand/M_DMSO_r1sorted.fwd.bw
+title = M_phase.plus.rep1
+color = #00B9E3
+min_value = 0
+max_value = 23000
+height = 1.5
+file_type = bigwig
+
+
+[bigwig]
+file = /mnt/LJW/EUseq202503/bw_strand/M_DMSO_r1sorted.rev.bw
+title = M_phase.minus.rep1
+color = #D96002
+min_value = 0
+max_value = 6800
+height = 1.5
+file_type = bigwig
+orientation = inverted
+
+[spacer]
+
+[bigwig]
+file = /mnt/LJW/EUseq202503/bw_strand/M_DMSO_r2sorted.fwd.bw
+title = M_phase.plus.rep2
+color = #00B9E3
+min_value = 0
+max_value = 23000
+height = 1.5
+file_type = bigwig
+
+
+[bigwig]
+file = /mnt/LJW/EUseq202503/bw_strand/M_DMSO_r2sorted.rev.bw
+title = M_phase.minus.rep2
+color = #D96002
+min_value = 0
+max_value = 6800
+height = 1.5
+file_type = bigwig
+fontsize = 6
+orientation = inverted
+
+[spacer]
+
+[simple bed]
+file = /mnt/LJW/EUseq202503/figures/rRNA_part.bed
+title = rRNA
+color = orange
+border_color = orange
+line_width = 0.5
+file_type = bed
+labels = on
+fontsize = 6
+height = 1.0
+
+[spacer]
+
+[x-axis]
+#top or bottom
+where = bottom
+fontsize = 6
+
