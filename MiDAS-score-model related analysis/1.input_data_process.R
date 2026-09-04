@@ -19,6 +19,7 @@ MiDAS.genes <- MiDAS %>%
   unique() 
 
 ####读取数据-WGS.CNV####
+#download from https://cog.sanger.ac.uk/cmp/download/mutations_wes_vcf_20250226.zip
 cnv.wgs <- read.csv("../WGS_purple_genes_total_copy_number_20260804.csv")
 cnv.wgs <- cnv.wgs[-(2:3),-2]
 a <- as.character(cnv.wgs[1,])
@@ -35,6 +36,7 @@ cnv.wgs <- cnv.wgs %>%
 table(!duplicated(cnv.wgs$SYMBOL))
 
 ####读取数据-WES.CNV####
+# download from https://cog.sanger.ac.uk/cmp/download/mutations_wes_vcf_20250226.zip
 cnv.wes <- read.csv("../WES_pureCN_CNV_genes_total_copy_number_20250207.csv")
 cnv.wes <- cnv.wes[-(2:3),]
 a <- as.character(cnv.wes[1,])
@@ -45,10 +47,12 @@ table(!duplicated(cnv.wes$SYMBOL))
 rm(a)
 
 ####读取数据-GDSC####
+#download from https://cmp.cog.sanger.ac.uk/download/GDSC1_fitted_dose_response_27Oct23.xlsx
 gdsc1 <- read_xlsx("../GDSC1_fitted_dose_response_27Oct23.xlsx")
 k <- gdsc1[!duplicated(gdsc1$DRUG_NAME),]$DRUG_NAME
 k1 <- gdsc1[!duplicated(gdsc1$DRUG_NAME),]
 
+#download from https://cmp.cog.sanger.ac.uk/download/GDSC2_fitted_dose_response_27Oct23.xlsx
 gdsc2 <- read_xlsx("../GDSC2_fitted_dose_response_27Oct23.xlsx")
 k <- gdsc2[!duplicated(gdsc2$DRUG_NAME),]$DRUG_NAME
 k2 <- gdsc2[!duplicated(gdsc2$DRUG_NAME),]
