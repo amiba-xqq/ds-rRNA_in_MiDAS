@@ -12,23 +12,11 @@ MiDAS <- MiDAS[-1,]
 rm(a)
 
 MiDAS.genes <- MiDAS %>%
-  filter(str_detect(Gene, "^(ONE_GENE|TWO_GENES)")) %>%  # 筛选相关行
-  pull(Gene) %>%                                          # 提取 Gene 列为字符向量
-  str_extract_all("(?<=:)[^;]+(?=;)") %>%                # 提取所有 : 与 ; 之间的基因名
-  unlist() %>%                                           # 展开为单一向量
+  filter(str_detect(Gene, "^(ONE_GENE|TWO_GENES)")) %>%  
+  pull(Gene) %>%                                          
+  str_extract_all("(?<=:)[^;]+(?=;)") %>%                
+  unlist() %>%                                           
   unique() 
-
-####获取CFS的长基因信息####
-#Wilson TE, Arlt MF, Park SH, et al. Large transcription units unify copy number variants and common fragile sites arising under replication stress. Genome Res. 2015
-CFS <- read_xlsx("../human_CFS.xlsx")
-colnames(CFS) <- CFS[1,]
-CFS <- CFS[-1,]
-colnames(CFS)[9] <- "gene"
-
-CFS.genes <- strsplit(CFS[!is.na(CFS$gene),]$gene, split = ",")
-CFS.genes <- unlist(CFS.genes)
-
-MiDAS.CFS.genes <- intersect(MiDAS.genes,CFS.genes)
 
 ####读取数据-WGS.CNV####
 cnv.wgs <- read.csv("../WGS_purple_genes_total_copy_number_20260804.csv")
