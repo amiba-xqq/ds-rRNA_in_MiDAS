@@ -12,14 +12,15 @@ MiDAS <- MiDAS[-1,]
 rm(a)
 
 MiDAS.genes <- MiDAS %>%
-  filter(str_detect(Gene, "^(ONE_GENE|TWO_GENES)")) %>%  # 筛选相关行
-  pull(Gene) %>%                                          # 提取 Gene 列为字符向量
-  str_extract_all("(?<=:)[^;]+(?=;)") %>%                # 提取所有 : 与 ; 之间的基因名
-  unlist() %>%                                           # 展开为单一向量
+  filter(str_detect(Gene, "^(ONE_GENE|TWO_GENES)")) %>%  
+  pull(Gene) %>%                                          
+  str_extract_all("(?<=:)[^;]+(?=;)") %>%                
+  unlist() %>%                                           
   unique() 
 
 #####读取GDSC数据库的input和TPM矩阵#####
 total <- read.csv("/mnt/NC/LJW/MiDAS_score/input/GDSC_input_data.2.0.csv",row.names = 1)
+#download from https://cog.sanger.ac.uk/cmp/download/rnaseq_merged_20260323.zip
 tpm <- read.csv("/mnt/NC/LJW/MiDAS_score/raw/rnaseq_merged_rsem_tpm_20260323.csv")
 tpm <- tpm[-(1:3),-(2:3)]
 colnames(tpm)[1] <- "SYMBOL"
