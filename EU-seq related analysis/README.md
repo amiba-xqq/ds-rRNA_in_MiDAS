@@ -12,7 +12,7 @@
 
 `6.prepare for GSEA analysis of EUseq and reported nacent RNAseq.R`: 用于获取GSEA分析所需要的gmt和rnk文件，用于分析EU-seq与前人报道的[nacent RNAseq](http://doi.org/10.1016/j.molcel.2015.09.021)的相关性。
 
-`DEG_MvsAsy_nacentRNAseq.Rdata`: 用于`6.prepare for GSEA analysis of EUseq and reported nacent RNAseq.R`,[nacent RNAseq](http://doi.org/10.1016/j.molcel.2015.09.021)分析后获取的差异表达基因信息。
+`DEG_MvsAsy_nacentRNAseq.Rdata`: 用于`6.prepare for GSEA analysis of EUseq and reported nacent RNAseq.R`, [nacent RNAseq](http://doi.org/10.1016/j.molcel.2015.09.021)分析后获取的差异表达基因信息。
 
 `EUseq_M_DMSOvsAsy_DMSO_down.gmt`,`EUseq_M_DMSOvsAsy_DMSO_up.gmt`,`nacent_RNAseq_MvsAsy.rnk`: `6.prepare for GSEA analysis of EUseq and reported nacent RNAseq.R`最后获取的文件，用于GSEA分析。
 
