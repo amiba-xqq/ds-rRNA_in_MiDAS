@@ -140,11 +140,3 @@ p1 <- pheatmap::pheatmap(n,show_colnames =T,show_rownames = T,
 p1
 ggsave(p1,filename = './DEG_M_APH_vs_M_DMSO_up/heatmap_M_APH_vs_M_DMSO_up_histone_gene.pdf',
        width = 5,height =5)
-
-
-
-
-
-
-
-
