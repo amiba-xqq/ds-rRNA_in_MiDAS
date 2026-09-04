@@ -122,18 +122,3 @@ dotp <- enrichplot::dotplot(go_enrich_results_ALL,font.size =12,
   theme(legend.key.size = unit(10, "pt"),#调整图例大小
         plot.margin=unit(c(1,1,1,1),'lines'))#调整四周留白大小
 ggsave(dotp,filename = './DEG_M_DMSO_vs_Asy_DMSO_up/GO_ALL_M_DMSO_vs_Asy_DMSO_up_dotplot.pdf',width =8,height =8)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
