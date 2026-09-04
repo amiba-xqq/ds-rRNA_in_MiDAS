@@ -12,13 +12,14 @@ MiDAS <- MiDAS[-1,]
 rm(a)
 
 MiDAS.genes <- MiDAS %>%
-  filter(str_detect(Gene, "^(ONE_GENE|TWO_GENES)")) %>%  # 筛选相关行
-  pull(Gene) %>%                                          # 提取 Gene 列为字符向量
-  str_extract_all("(?<=:)[^;]+(?=;)") %>%                # 提取所有 : 与 ; 之间的基因名
-  unlist() %>%                                           # 展开为单一向量
+  filter(str_detect(Gene, "^(ONE_GENE|TWO_GENES)")) %>%  
+  pull(Gene) %>%                                         
+  str_extract_all("(?<=:)[^;]+(?=;)") %>%              
+  unlist() %>%                                          
   unique() 
 
 ####读取细胞信息####
+#download from https://depmap.org/portal/data_page/?tab=allData&releasename=CCLE%202019&filename=Cell_lines_annotations_20181226.txt
 ccle.cell <- read.table("../CCLE/Cell_lines_annotations_20181226.txt",
                         sep = "\t",fill = T)
 a <- as.character(ccle.cell[1,])
@@ -26,6 +27,7 @@ colnames(ccle.cell) <- a
 ccle.cell <- ccle.cell[-1,]
 
 ####读取药物敏感性信息####
+#download from https://depmap.org/portal/data_page/?tab=allData&releasename=Sanger%20GDSC1%20and%20GDSC2&filename=sanger-dose-response.csv
 ccle.drug <- read.csv("../CCLE/sanger-dose-response.csv")
 a <- ccle.drug[!duplicated(ccle.drug$DRUG_NAME),]
 RS.drug <- c("Niraparib","5-Fluorouracil","Oxaliplatin","Epirubicin","VE-821","Camptothecin",
@@ -34,7 +36,6 @@ RS.drug <- c("Niraparib","5-Fluorouracil","Oxaliplatin","Epirubicin","VE-821","C
               "Talazoparib","Veliparib","AZD7762","Wee1 Inhibitor","Rucaparib",
               "Temozolomide","AZ20","Cisplatin","Etoposide") #GDSC数据库中挑选的25种复制压力型药物
 RS.drug <- toupper(RS.drug)
-length(intersect(a$DRUG_NAME,RS.drug)) #23种复制压力型药物处理见于CCLE
 
 ccle.drug.rs <- ccle.drug[ccle.drug$DRUG_NAME %in% RS.drug,
                           c("ARXSPAN_ID","DRUG_NAME","Z_SCORE_PUBLISHED")]
@@ -46,6 +47,7 @@ colnames(ccle.drug.rs) <- c("depMapID","DRUG_Z_score")
 ccle.drug.rs <- ccle.drug.rs[ccle.drug.rs$depMapID!="",]
 
 ####读取MiDAS gene的CN信息####
+#download from https://depmap.org/portal/data_page/?tab=allData&releasename=DepMap%20Public%2026Q1&filename=OmicsCNGeneWGS.csv
 ccle.cnv <- read.csv("../CCLE/OmicsCNGeneWGS.csv",row.names = 1)
 ccle.cnv <- ccle.cnv[,c(3,6:ncol(ccle.cnv))]
 colnames(ccle.cnv)[2:ncol(ccle.cnv)] <- sub("\\.\\..*", "", colnames(ccle.cnv)[2:ncol(ccle.cnv)])
