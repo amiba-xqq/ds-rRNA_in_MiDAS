@@ -34,3 +34,36 @@
 `test_CCLE.csv`: `2.test_data_CCLE.R`最后获取的来自于CCLE数据库的用于验证模型的输入数据。
 
 =====================================================================================
+
+First, we use an R script to obtain the raw data `GDSC_TPM_input_data.csv` for LightGBM model training. The specific training code can be found in `4.model_building.LightGBM2.0.ipynb`. Running this script in a Jupyter Notebook requires Python 3 (>= 3.8) and the following dependencies:
+* numpy(2.2.6)
+* pandas(3.0.5)
+* lightgbm(4.7.0)
+* scikit-learn(1.9.0)
+* scipy(1.18.0)
+* tqdm(4.66.4)
+* optuna(4.9.0)
+* shap(0.52.0)
+* matplotlib(3.11.1)
+* joblib(1.4.2)
+* statsmodels(0.14.6)
+
+`1.input_data_process.R`: Analyzes drug sensitivity and mutation-related data obtained from the GDSC database, ultimately producing the input data for model training.
+
+`2.test_data_CCLE.R`: Analyzes drug sensitivity and mutation-related data obtained from the CCLE database, ultimately producing the data used for model validation.
+
+`3.TPM_GDSC.R`: Analyzes gene expression-related data from the GDSC database, ultimately yielding the TPM values for all MiDAS region genes.
+
+`4.model_building.LightGBM2.0.ipynb`: Jupyter Notebook script for LightGBM model training.
+
+`GDSC_TPM_input_data.csv`: The input data obtained from `3.TPM_GDSC.R`, intended for mediation effect analysis.
+
+`GDSC_input_data.2.0.csv`: The input data obtained from `1.input_data_process.R`, intended for model training.
+
+`MiDAS_regions.xls`: MiDAS occurring regions and related genes, with data sourced from the article: [Macheret M, Bhowmick R, Sobkowiak K, et al. High-resolution mapping of mitotic DNA synthesis regions and common fragile sites in the human genome through direct sequencing. Cell Res. 2020](http://doi.org/10.1038/s41422-020-0358-x)
+
+`MiDAS_score_model.LightGBM2.0.lgb`: The MiDAS-score-model model file obtained from training in `4.model_building.LightGBM2.0.ipynb`.
+
+`model_save.LightGBM2.0.joblib`: All Python object data saved by `4.model_building.LightGBM2.0.ipynb`.
+
+`test_CCLE.csv`: The input data for model validation obtained from the CCLE database through `2.test_data_CCLE.R`.
