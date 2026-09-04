@@ -25,4 +25,4 @@
 
 `GDSC_input_data.2.0.csv`: `1.input_data_process.R`最后得到的用于模型训练的输入数据。
 
-`MiDAS_regions.xls`: MiDAS发生区域及相关基因，数据来自于文章：[High-resolution mapping of mitotic DNA synthesis regions and common fragile sites in the human genome through direct sequencing](doi.org/10.1038/s41422-020-0358-x)
+`MiDAS_regions.xls`: MiDAS发生区域及相关基因，数据来自于文章：[High-resolution mapping of mitotic DNA synthesis regions and common fragile sites in the human genome through direct sequencing](http://doi.org/10.1038/s41422-020-0358-x)
