@@ -26,3 +26,9 @@
 `GDSC_input_data.2.0.csv`: `1.input_data_process.R`最后得到的用于模型训练的输入数据。
 
 `MiDAS_regions.xls`: MiDAS发生区域及相关基因，数据来自于文章：[Macheret M, Bhowmick R, Sobkowiak K, et al. High-resolution mapping of mitotic DNA synthesis regions and common fragile sites in the human genome through direct sequencing. Cell Res. 2020](http://doi.org/10.1038/s41422-020-0358-x)
+
+`MiDAS_score_model.LightGBM2.0.lgb`:`4.model_building.LightGBM2.0.ipynb`最后训练获得的MiDAS-score-model模型文件。
+
+`model_save.LightGBM2.0.joblib`：`4.model_building.LightGBM2.0.ipynb`保存的所有python对象数据。
+
+`test_CCLE.csv`: `2.test_data_CCLE.R`最后获取的来自于CCLE数据库的用于验证模型的输入数据。
