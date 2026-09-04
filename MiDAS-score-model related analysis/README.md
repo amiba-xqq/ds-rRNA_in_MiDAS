@@ -33,9 +33,7 @@
 
 `test_CCLE.csv`: `2.test_data_CCLE.R`最后获取的来自于CCLE数据库的用于验证模型的输入数据。
 
-
 ===========================================================================================
-
 
 First, we use an R script to obtain the raw data `GDSC_TPM_input_data.csv` for LightGBM model training. The specific training code can be found in `4.model_building.LightGBM2.0.ipynb`. Running this script in a Jupyter Notebook requires Python 3 (>= 3.8) and the following dependencies:
 * numpy(2.2.6)
