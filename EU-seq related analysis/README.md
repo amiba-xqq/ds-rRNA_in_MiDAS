@@ -24,8 +24,6 @@
 
 ===========================================================================================
 
-# EU-seq related analysis
-
 `1.pepline_EUseq.sh`: Used for upstream analysis of EU-seq.
 
 `2.counts.R`: Used to process the count matrix obtained from EU-seq using featureCounts.
