@@ -13,3 +13,5 @@
 `hicPlotTADs track.rar`: `3.analysis_HiChIP_202608.sh`中hicPlotTADs作图所需要的track参数文件。
 
 `loops.rar`: `2.HiCExplorer-HiC.sh`和`3.analysis_HiChIP_202608.sh`中使用[FitChIP](https://ay-lab.github.io/FitHiChIP/html/usage/installation.html)分析后获取的Hi-C或HiChIP loop。
+
+===========================================================================================
