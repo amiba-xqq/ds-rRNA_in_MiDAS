@@ -15,3 +15,17 @@
 `loops.rar`: `2.HiCExplorer-HiC.sh`和`3.analysis_HiChIP_202608.sh`中使用[FitChIP](https://ay-lab.github.io/FitHiChIP/html/usage/installation.html)分析后获取的Hi-C或HiChIP loop。
 
 ===========================================================================================
+
+`1.pepline_Hic_202607.sh`: Used for upstream analysis of Hi-C or HiChIP raw data to finally obtain a hic file.
+
+`2.HiCExplorer-HiC.sh`: Used for downstream analysis of Hi-C, primarily relying on [HiCExplorer](https://hicexplorer.readthedocs.io/en/latest/index.html).
+
+`3.analysis_HiChIP_202608.sh`: Used for downstream analysis of HiChIP.
+
+`4.calculate_Hic_counts_in_loops.py`: Used in `2.HiCExplorer-HiC.sh` to analyze differential Hi-C loops between two groups.
+
+`FitChIP configfile.rar`: Parameter files for analysis using [FitChIP](https://ay-lab.github.io/FitHiChIP/html/usage/installation.html) in `2.HiCExplorer-HiC.sh` and `3.analysis_HiChIP_202608.sh`.
+
+`hicPlotTADs track.rar`: Track parameter files required for hicPlotTADs plotting in `3.analysis_HiChIP_202608.sh`.
+
+`loops.rar`: Hi-C or HiChIP loops obtained after analysis using [FitChIP](https://ay-lab.github.io/FitHiChIP/html/usage/installation.html) in `2.HiCExplorer-HiC.sh` and `3.analysis_HiChIP_202608.sh`.
