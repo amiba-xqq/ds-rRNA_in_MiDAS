@@ -96,6 +96,7 @@ total <- inner_join(gdsc,cnv.wes.midas,by="SANGER_MODEL_ID")
 
 ####读取SNP/indel突变信息####
 #mutant文件中包含所有上述合并的total中所有968个细胞的突变信息
+# download 'mutations_all_20260724.csv' from https://cog.sanger.ac.uk/cmp/download/mutations_all_20260724.zip
 mutant.raw <- read.csv("../mutations_all_20260724.csv")
 colnames(mutant.raw)
 # a <- mutant.raw[!duplicated(mutant.raw$model_id),]$model_id
