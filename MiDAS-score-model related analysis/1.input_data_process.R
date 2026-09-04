@@ -66,21 +66,12 @@ k <- gdsc2[!duplicated(gdsc2$DRUG_NAME),]$DRUG_NAME
 k2 <- gdsc2[!duplicated(gdsc2$DRUG_NAME),]
 # write.table(k,"gdsc2_drug.table",quote = F, col.names = F, row.names = F)
 
-# RS.drug <- c("Gemcitabine","Cytarabine","Etoposide","Doxorubicin","Cisplatin","Mitomycin-C",
-#              "Bleomycin","SN-38","5-Fluorouracil","Temozolomide","Methotrexate",
-#              "Pemetrexed","Ara-G","Wee1 Inhibitor","Olaparib","Rucaparib","Talazoparib",
-#              "Veliparib","PARP_9495","PARP_0108","PARP_9482","KIN001-260","KIN001-266",
-#              "CRT0160829","Fludarabine","Nelarabine","Leflunomide","Mycophenolic acid","5‑azacytidine",
-#              "Camptothecin","Irinotecan","Topotecan","Teniposide","Podophyllotoxin bromide",
-#              "Mitoxantrone","Epirubicin","Oxaliplatin","Dacarbazine","Cyclophosphamide",
-#              "Niraparib","AZD6738","VE821","VE-822","AZD7762","MK-8776","Dinaciclib","Pyridostatin",
-#              "AZ20","FS106")
 RS.drug2 <- c("Niraparib","5-Fluorouracil","Oxaliplatin","Epirubicin","VE821","Camptothecin",
               "MK-8776","Irinotecan","Teniposide","AZD6738","Topotecan","VE-822",
               "Methotrexate","SN-38","Olaparib","Cyclophosphamide",
               "Talazoparib","Veliparib","AZD7762","Wee1 Inhibitor","Rucaparib",
               "Temozolomide","AZ20","Cisplatin","Etoposide")
-# length(RS.drug) #一共49诱导复制压力的药物
+
 length(RS.drug2) #一共25诱导复制压力的药物
 
 gdsc1.rs <- gdsc1[gdsc1$DRUG_NAME %in% RS.drug2,c("SANGER_MODEL_ID","DRUG_NAME","Z_SCORE")]
@@ -153,31 +144,6 @@ total[is.na(total)] <- 0
 
 write.csv(total,"/mnt/NC/LJW/MiDAS_score/input/GDSC_input_data.2.0.csv")
 
-####合并各种药物信息和total####
-a <- rbind(gdsc1.rs,gdsc2.rs)
-a <- a %>%
-  group_by(SANGER_MODEL_ID, DRUG_NAME) %>%          # 按模型和药物分组
-  summarise(Z_SCORE = mean(Z_SCORE, na.rm = TRUE), .groups = "drop") %>%  # 计算均值，忽略 NA
-  pivot_wider(
-    id_cols     = SANGER_MODEL_ID,                  # 保留为行标识
-    names_from  = DRUG_NAME,                        # 药物名称作为新列名
-    values_from = Z_SCORE                           # 值来自平均后的 Z_SCORE
-  )
-
-total.test <- inner_join(a,total,by="SANGER_MODEL_ID")
-
-total.test <- total.test %>%
-  mutate(across(-1, ~ as.numeric(as.character(.))))
-
-mat_A <- as.matrix(total.test[, colnames(total.test)[2:49], drop = FALSE])
-mat_B <- as.matrix(total.test[, c("FAT3_CNV","WDR70_CNV","CDH4_CNV","ATP8A2_CNV",
-                                  "LINGO2_CNV"), drop = FALSE])
-
-cor_matrix <- cor(mat_A, mat_B, method = "spearman", 
-                  use = "pairwise.complete.obs")
-
-cor_matrix2 <- cor(total$DRUG_Z_score, mat_B, method = "spearman", 
-                  use = "pairwise.complete.obs")
 
 
 
