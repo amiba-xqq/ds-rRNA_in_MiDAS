@@ -30,25 +30,3 @@ nacent_RNAseq <- data.frame(rownames(DEG_nacentRNAseq),
                             DEG_nacentRNAseq$log2FoldChange)
 write.table(nacent_RNAseq,"nacent_RNAseq_MvsAsy.rnk",
             sep="\t",col.names = F,row.names = F,quote = F)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
