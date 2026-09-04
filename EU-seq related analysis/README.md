@@ -11,3 +11,11 @@
 `5.DEG-M_DMSO vs Asy_DMSO.R`: 利用`3.DEG.R`得到的Rdata，继续分析获取Mitotic DMSO组比非同步化DMSO组显著上调或下调的基因。
 
 `6.prepare for GSEA analysis of EUseq and reported nacent RNAseq.R`: 用于获取GSEA分析所需要的gmt和rnk文件，用于分析EU-seq与前人报道的[nacent RNAseq](http://doi.org/10.1016/j.molcel.2015.09.021)的相关性。
+
+`DEG_MvsAsy_nacentRNAseq.Rdata`: 用于`6.prepare for GSEA analysis of EUseq and reported nacent RNAseq.R`,[nacent RNAseq](http://doi.org/10.1016/j.molcel.2015.09.021)分析后获取的差异表达基因信息。
+
+`EUseq_M_DMSOvsAsy_DMSO_down.gmt`,`EUseq_M_DMSOvsAsy_DMSO_up.gmt`,`nacent_RNAseq_MvsAsy.rnk`: `6.prepare for GSEA analysis of EUseq and reported nacent RNAseq.R`最后获取的文件，用于GSEA分析。
+
+`counts_RNAseq.txt`: EU-seq上游分析得到的表达矩阵，用于`2.counts.R`。
+
+`g2s_vm25_gencode.txt`: ENSEMBLE ID和SYMBOL的转化文件，用于`2.counts.R`。
