@@ -1,0 +1,46 @@
+[bigwig]
+file = /mnt/LJW/MiDASseq_202602/bw_cor/APH_Mock.bw
+title = APH_Mock
+color = #D96002
+min_value = 0
+max_value = 250
+height = 1.5
+file_type = bigwig
+
+[spacer]
+
+[bigwig]
+file = /mnt/LJW/MiDASseq_202602/bw_cor/APH_BMH21.bw
+title = APH_BMH21
+color = #D96002
+min_value = 0
+max_value = 250
+height = 1.5
+file_type = bigwig
+
+[spacer]
+
+[simple bed]
+file = /mnt/LJW/MiDASseq_202602/peaks/MiDAS_peaks.bed
+title = MiDAS_region
+color = orange
+border_color = orange
+line_width = 0.5
+file_type = bed
+labels = false
+
+[genes]
+file = /home/DDR/GTF/Homo_sapiens.GRCh38.112.gtf
+title = genes
+color = darkblue
+border_color = darkblue
+labels = true
+file_type = gtf
+fontsize = 10
+gene_rows = 1
+height = 0.5
+
+[x-axis]
+#top or bottom
+where = bottom
+fontsize = 6
